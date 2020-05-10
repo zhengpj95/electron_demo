@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 400px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .resultDiv {
+            height: 80px;
+            width: 85%;
+            background-color: #464A4F;
+            font-size: 60px;
+        }
+
+        .result {
+            height: 100%;
+            width: 100%;
+            background-color: #464A4F;
+            font-size: 60px;
+            border: 0;
+            /*float: right;*/
+            text-align: right;
+        }
+
+        .result:focus {
+            outline: none;
+        }
+
+        .row {
+            height: 50px;
+            margin: 5px auto;
+        }
+
+        .btn {
+            width: 80px;
+            height: 100%;
+            cursor: pointer;
+            font-size: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .operator {
+            background-color: #FF9E0A;
+        }
+
+        .equal {
+            background-color: #005cbf;
+        }
+
+        .topOpe {
+            background-color: #c6c8ca;
+        }
+
+        .topOpe:active, .operator:active, .number:active {
+            box-shadow: 0 2px #000000;
+        }
+
+        .zero {
+            width: 165px;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <div class="resultDiv">
+        <input class="result" type="text" value="" placeholder="0">
+    </div>
+    <div class="btn-group">
+        <div class="row">
+            <input type="button" value="AC" class="btn topOpe">
+            <input type="button" value="C" class="btn topOpe">
+            <input type="button" value="%" class="btn topOpe">
+            <input type="button" value="/" class="btn operator">
+        </div>
+        <div class="row">
+            <input type="button" value="7" class="btn number">
+            <input type="button" value="8" class="btn number">
+            <input type="button" value="9" class="btn number">
+            <input type="button" value="*" class="btn operator">
+        </div>
+        <div class="row">
+            <input type="button" value="4" class="btn number">
+            <input type="button" value="5" class="btn number">
+            <input type="button" value="6" class="btn number">
+            <input type="button" value="-" class="btn operator">
+        </div>
+        <div class="row">
+            <input type="button" value="1" class="btn number">
+            <input type="button" value="2" class="btn number">
+            <input type="button" value="3" class="btn number">
+            <input type="button" value="+" class="btn operator">
+        </div>
+        <div class="row">
+            <input type="button" value="0" class="btn number zero">
+            <input type="button" value="." class="btn number">
+            <input type="button" value="=" class="btn operator equal">
+        </div>
+    </div>
+</div>
+<script src="./render.js"></script>
+</body>
+</html>
