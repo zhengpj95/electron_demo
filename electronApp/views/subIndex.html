@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SubIndex</title>
+</head>
+<body>
+<div>
+    <h2>打开什么界面呢？子窗口！</h2>
+    <button id="btnMsg">向父窗口传递信息</button>
+    <label for="postMsg">向父窗口传递的信息：</label><input id="postMsg" name="msg" type="text">
+</div>
+</body>
+<script>
+	let btn = document.getElementById('btnMsg');
+	btn.onclick = function (e) {
+		let txt = document.getElementById('postMsg');
+		window.opener.postMessage('子窗口向父窗口传递的信息' + txt.value);
+	}
+</script>
+</html>

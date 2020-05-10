@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My First Electron App</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+</head>
+
+<body>
+<div class="app">
+    <h1>Hello World!</h1>
+    We are using node
+    <script>
+		document.write(process.versions.node)
+    </script>
+    , Chrome
+    <script>
+		document.write(process.versions.chrome)
+    </script>
+    , and Electron
+    <script>
+		document.write(process.versions.electron)
+    </script>
+    .
+
+    <h3>This is my First Desktop App with Electron.</h3>
+
+    <div>
+        <a id="zhihu" href="https://www.zhihu.com">知乎</a>
+        <button id="btnOpen">打开子窗口</button>
+        <button id="btnInBrowser">在浏览器中打开</button>
+    </div>
+    <div>
+        <button id="btnOpen2">打开子窗口2</button>
+        <br>
+        子窗口传递过来的信息：<p id="txtFromChild"></p>
+    </div>
+    <div>
+        <button id="btnOpenFile">打开文件</button>
+        <br>
+    </div>
+    <div>
+        <button id="btnSaveFile">保存文件</button>
+    </div>
+    <div>
+        <button id="btnMsgBox">弹出对话框</button>
+        <input id="txtMsg" type="text" value="">
+    </div>
+    <div>
+        <button id="btnNotify">通知信息</button>
+    </div>
+    <div>
+        激活码：<span id="code">activated cody: 12365478998AbText.78</span>
+        <button id="btnCopy">复制激活码</button>
+        <button id="btnReload">测试重新加载</button>
+    </div>
+</div>
+</body>
+<script src="./src/mouseMenu.js"></script>
+<script src="src/renderer.js"></script>
+</html>

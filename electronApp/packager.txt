@@ -1,0 +1,16 @@
+使用 electron-packager 打包成执行文件
+
+此时electron-packager就会自动判别当前的操作系统打包对应的文件，例如windows系统下就会打包成.exe格式。
+如果你想一次性把所有的操作系统都打包一遍，可以在上面打包语句后面加上 -all 。
+
+> npm install electron-packager -g
+
+> electron-packager . appName --out path
+
+appName为命名，path为打包路劲
+
+我们也可以在 package.json 的 scripts 中配置如下代码
+
+> "packager": "electron-packager ./ myApp --out ./bin-release --overwrite --icon=./favicon.ico"
+>
+> 然后通过 `npm run-script packager` 来进行打包
