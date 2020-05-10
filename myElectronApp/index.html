@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连接工具</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--    <script src="./node_modules/jquery/dist/jquery.js"></script>-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .container-fluid {
+            background-color: #cccccc;
+            height: 100%;
+        }
+
+        .topDiv {
+            height: 200px;
+            padding: 20px;
+            border-bottom: 3px solid #708090;
+        }
+
+        .leftDiv {
+            width: 30%;
+            margin: 10px 20px;
+            border-right: 8px solid #708090;
+        }
+
+        .rightDiv {
+            width: 70%;
+            margin: 10px 20px;
+        }
+
+        #resultTxt {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="topDiv">
+        <h2>My Electron App</h2>
+        <ul class="nav justify-content-center linkUl">
+            <li class="nav-item">
+                <a class="nav-link linkRedis" href="#">Redis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkMongodb" href="#">Mongodb</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkMongoose" href="#">Mongoose</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkNodejsRedis" href="#">NodeJs-Redis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkNodejsMongodb" href="#">NodeJs-Mongodb</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link linkNodejsMongoose" href="#">NodeJs-Mongoose</a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex flex-row">
+        <div class="leftDiv">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link btnRedis" href="#">Redis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mongodb btnMongodb" href="#">Mongodb</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Mongoose</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other</a>
+                </li>
+            </ul>
+        </div>
+        <div class="rightDiv">
+            <h3 id="stateId">Redis</h3>
+            <br>
+            连接命令: <br>
+            <form>
+                <div class="form-row align-items-center">
+                    <label for="ipTxt" class="col-form-label">IP: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="ipTxt" value="192.168.120.128">
+                    </div>
+                    <label for="portTxt" class="col-form-label">IP: </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="portTxt" value="6379">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary btnConnect">连接</button>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+            操作命令: <br>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="operationTxt" style="background-color: #98a5b3;">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-secondary btnExec">Exec</button>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <label for="resultTxt">操作结果: </label>
+                    <textarea class="form-control" id="resultTxt" aria-label="With textarea"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./src/render.js"></script>
+<script src="./src/gotoLink.js"></script>
+</body>
+</html>

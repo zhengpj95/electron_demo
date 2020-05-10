@@ -1,0 +1,23 @@
+{
+	"name": "myelectronapp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron ./main.js",
+		"packager": "electron-packager ./ myApp --out ./bin-release --overwrite --icon=./favicon.ico"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bootstrap": "^4.4.1",
+		"jquery": "^3.5.0",
+		"mongodb": "^3.5.7",
+		"redis": "^3.0.2"
+	},
+	"devDependencies": {
+		"electron": "^8.2.5"
+	}
+}
