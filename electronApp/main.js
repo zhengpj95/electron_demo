@@ -1,4 +1,4 @@
-const {app, BrowserWindow, globalShortcut, screen} = require('electron');
+const {app, BrowserWindow, globalShortcut, screen, ipcMain} = require('electron');
 
 let win = null;
 
@@ -8,8 +8,8 @@ function createWindow() {
 
 	// Create the browser window.
 	win = new BrowserWindow({
-		height: area.height,
-		width: area.width,
+		height: area.height / 2,
+		width: area.width / 2,
 		x: area.x,
 		y: area.y,
 		webPreferences: {
@@ -80,6 +80,20 @@ app.on('will-quit', () => {
 	globalShortcut.unregister('ctrl+o');
 	globalShortcut.unregisterAll();
 })
+
+// 主进程接收渲染进程发送的消息 channel: helloMsg
+ipcMain.on('helloReq', (event, arg) => {
+	console.log(arg)
+
+	// 主进程回复渲染进程信息 channel: helloRes
+	event.reply('helloRes', 'ipcMain --- hello renderer...');
+})
+
+// 同步通信方式
+ipcMain.on('sync-message', ((event, args) => {
+	console.log(args);
+	event.returnValue = 'ipcMain response message ---ping';
+}))
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

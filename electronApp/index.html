@@ -59,4 +59,23 @@
 </body>
 <script src="./src/mouseMenu.js"></script>
 <script src="src/renderer.js"></script>
+<script>
+	const {ipcRenderer} = require('electron')
+
+	// 渲染进程发送消息给主进程，channel: helloReq
+	const helloMsg = () => {
+		ipcRenderer.send('helloReq', 'helloReq --- ipcRenderer...');
+	}
+
+	// 渲染进程接收主进程发回的消息 channel: helloRes
+	ipcRenderer.on('helloRes', (event, arg) => {
+		console.log(arg)
+	})
+
+	helloMsg();
+
+	// 渲染进程同步方式与主进程通信
+	console.log(ipcRenderer.sendSync('sync-message', 'sync-message---ping'));
+</script>
+
 </html>
