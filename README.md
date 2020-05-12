@@ -16,6 +16,7 @@
     - [globalShortcut](#globalshortcut)
     - [Main and Renderer Processes](#main-and-renderer-processes)
     - [clipboard](#clipboard)
+    - [shell](#shell)
     - [Using Node.js APIs](#using-nodejs-apis)
   - [打包工具 `electron-packager`](#%e6%89%93%e5%8c%85%e5%b7%a5%e5%85%b7-electron-packager)
 
@@ -185,6 +186,20 @@ console.log(clipboard.readText('selection'));
 // readText([type])
 // ...other method
 // type:Can be selection or clipboard; default is 'clipboard'.
+```
+
+### shell
+
+> Manage files and URLs using their default applications.
+
+The `shell` module provides functions related to desktop integration.
+
+主进程和渲染进程模块。
+
+```javascript
+// open a url in user's default browser
+const { shell } = require('electron')
+shell.openExternal('https://github.com')
 ```
 
 ### Using Node.js APIs
