@@ -15,6 +15,7 @@
     - [screen](#screen)
     - [globalShortcut](#globalshortcut)
     - [Main and Renderer Processes](#main-and-renderer-processes)
+    - [clipboard](#clipboard)
     - [Using Node.js APIs](#using-nodejs-apis)
   - [打包工具 `electron-packager`](#%e6%89%93%e5%8c%85%e5%b7%a5%e5%85%b7-electron-packager)
 
@@ -165,6 +166,26 @@ that the main process perform those operations.
 In Electron, we have several ways to communicate between the main process and renderer processes,
 such as ipcRenderer and ipcMain modules for sending messages,
 and the remote module for RPC style communication.
+
+### clipboard
+
+> Perform copy and paste operations on the system clipboard.
+
+Modules for Both Process Types, Main and renderer process.
+
+On Linux, there is also a **selection** clipboard. To manipulate it you need to pass selection to each method.
+
+```javascript
+const { clipboard } = require('electron');
+
+clipboard.writeText('Example String', 'selection');
+console.log(clipboard.readText('selection'));
+
+// writeText(string[, type])
+// readText([type])
+// ...other method
+// type:Can be selection or clipboard; default is 'clipboard'.
+```
 
 ### Using Node.js APIs
 
