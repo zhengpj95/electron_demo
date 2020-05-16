@@ -1,3 +1,4 @@
+const sufFix = require('./utils/SufFix');
 let btnList = document.getElementsByClassName('btn');
 let resultEle = document.getElementsByClassName('result')[0];
 
@@ -12,6 +13,9 @@ for (let item of btnList) {
 			let value = resultEle.value;
 			let arr = value.split(/[-*%+/]/g);
 			console.log(arr)
+			sufFix.parse(value);
+			console.log(sufFix.getResult());
+			resultEle.value = sufFix.getResult();
 		} else {
 			resultEle.value += item.value;
 		}
