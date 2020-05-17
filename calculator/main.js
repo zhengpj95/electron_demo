@@ -1,11 +1,15 @@
-const {app, BrowserWindow, Menu, globalShortcut} = require('electron');
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
 
 let mainWin = null;
 
 function createWindow() {
 	mainWin = new BrowserWindow({
-		width: 370,
-		height: 430,
+		width: 460,
+		height: 460,
+		minWidth: 420,
+		minHeight: 450,
+		maxWidth: 500,
+		maxHeight: 500,
 		x: 100,
 		y: 100,
 		webPreferences: {
