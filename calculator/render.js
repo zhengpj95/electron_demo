@@ -11,11 +11,9 @@ for (let item of btnList) {
 			resultEle.value = resultEle.value.slice(0, -1);
 		} else if (item.value == '=') {
 			let value = resultEle.value;
-			let arr = value.split(/[-*%+/]/g);
-			console.log(arr)
 			sufFix.parse(value);
-			console.log(sufFix.getResult());
-			resultEle.value = sufFix.getResult();
+			let result = sufFix.getResult();
+			resultEle.value = result ? result : '';
 		} else {
 			resultEle.value += item.value;
 		}
