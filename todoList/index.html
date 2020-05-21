@@ -5,10 +5,31 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TodoList</title>
+	<style>
+		.root {
+			text-align: center;
+		}
+
+		ul {
+			list-style-type: none;
+			border: 1px solid #ff0011;
+			text-align: left;
+			padding: 0;
+		}
+	</style>
 </head>
 
 <body>
-
+	<div class="root">
+		<label for="inputValue">输入：</label>
+		<input id="inputValue" type="text">
+		<input type="button" value="添加">
+		<ul>
+			<li>React</li>
+			<li>Vue</li>
+			<li>Nodejs</li>
+		</ul>
+	</div>
 </body>
 
 </html>
