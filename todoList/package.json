@@ -8,5 +8,8 @@
 	"license": "MIT",
 	"devDependencies": {
 		"electron": "^9.0.0"
+	},
+	"dependencies": {
+		"redis": "^3.0.2"
 	}
 }
