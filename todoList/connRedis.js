@@ -15,9 +15,13 @@ client.on('ready', () => {
 });
 
 // then(value, error)
-smembers('todoList').then((err, value) => {
-	console.log(err, value);
-});
+smembers('todoList')
+	.then((value, err) => {
+		console.log('测试 --- ', value, err);
+	})
+	.catch((err) => {
+		console.log('测试 --- ', err.origin);
+	});
 
 module.exports = {
 	client,

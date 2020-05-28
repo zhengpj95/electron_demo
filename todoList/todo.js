@@ -1,8 +1,12 @@
 const { client, redis, smembers } = require('./connRedis');
 let todo = 'todoList';
 
-client.keys('*', redis.print);
-smembers('todoList').then(showTodoList);
+// client.keys('*', redis.print);
+smembers('todoList')
+	.then(showTodoList)
+	.catch((err) => {
+		console.log(`读取数据失败 --- `, err);
+	});
 
 function showTodoList(value, err) {
 	if (err) {
