@@ -1,7 +1,7 @@
 const { client, redis, smembers } = require('./connRedis');
 let todo = 'todoList';
 
-client.keys('*', redis.print)
+client.keys('*', redis.print);
 smembers('todoList').then(showTodoList);
 
 function showTodoList(value, err) {
