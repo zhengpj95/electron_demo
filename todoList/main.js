@@ -13,7 +13,7 @@ function createWin() {
 		},
 		// frame: false
 	});
-	// win.webContents.openDevTools();
+	win.webContents.openDevTools();
 	win.loadFile('index.html').catch((err) =>
 		console.log(`加载index.html错误`, err)
 	);
