@@ -5,11 +5,14 @@ let todo = 'todoList';
 // console.log(client);
 // console.log(client.connected);
 
-smembers(todo)
-	.then(showTodoList)
-	.catch((err) => {
-		console.log(`读取数据失败 --- `, err);
-	});
+client.on('ready', () => {
+	console.log(`ready on todo.js`);
+	smembers(todo)
+		.then(showTodoList)
+		.catch((err) => {
+			console.log(`读取数据失败 --- `, err);
+		});
+});
 
 function showTodoList(value, err) {
 	if (err) {
