@@ -1,6 +1,6 @@
 # electron_demo
 
-- [electron_demo](#electrondemo)
+- [electron_demo](#electron_demo)
   - [Description](#description)
   - [Develope Environment](#develope-environment)
   - [Installation](#installation)
@@ -18,7 +18,7 @@
     - [clipboard](#clipboard)
     - [shell](#shell)
     - [Using Node.js APIs](#using-nodejs-apis)
-  - [打包工具 `electron-packager`](#%e6%89%93%e5%8c%85%e5%b7%a5%e5%85%b7-electron-packager)
+  - [打包工具 `electron-packager`](#打包工具-electron-packager)
 
 ## Description
 

@@ -14,6 +14,14 @@ client.on('ready', () => {
 	console.log(`client ready...`);
 });
 
+client.on('connect', () => {
+	console.log(`client connect...`);
+});
+
+client.on('end', () => {
+	console.log(`client end...`);
+});
+
 // then(value, error)
 smembers('todoList')
 	.then((value, err) => {
