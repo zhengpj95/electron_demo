@@ -1,6 +1,7 @@
 const sufFix = require('./utils/SufFix');
 let btnList = document.getElementsByClassName('btn');
 let resultEle = document.getElementsByClassName('result')[0];
+let reset = false;
 
 for (let item of btnList) {
 	item.onclick = function (e) {
@@ -14,8 +15,13 @@ for (let item of btnList) {
 			sufFix.parse(value);
 			let result = sufFix.getResult();
 			resultEle.value = result ? result : '';
+			reset = true; //重置
 		} else {
+			if (reset) {
+				reset = false;
+				resultEle.value = '';
+			}
 			resultEle.value += item.value;
 		}
-	}
+	};
 }

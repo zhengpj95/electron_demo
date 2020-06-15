@@ -13,14 +13,13 @@ function createWindow() {
 		x: 100,
 		y: 100,
 		webPreferences: {
-			nodeIntegration: true
+			nodeIntegration: true,
 		},
-		icon: 'favicon.ico'
+		icon: 'favicon.ico',
 	});
 
 	mainWin.webContents.openDevTools();
-	mainWin.loadFile('index.html')
-		.catch(err => console.log(`加载index.html错误`, err));
+	mainWin.loadFile('index.html').catch((err) => console.log(`加载index.html错误`, err));
 }
 
 app.allowRendererProcessReuse = true;
@@ -36,8 +35,8 @@ app.on('activate', () => {
 app.on('ready', () => {
 	globalShortcut.register('f5', () => {
 		mainWin.reload();
-	})
-})
+	});
+});
 
 app.on('will-quit', () => {
 	globalShortcut.unregister('f5');
@@ -48,5 +47,4 @@ app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
 	}
-})
-
+});

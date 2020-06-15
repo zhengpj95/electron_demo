@@ -23,7 +23,7 @@ class SufFix {
 	parse(expression) {
 		this.expression = this.format(expression);
 		let arr = this.expression;
-		arr.push('#');//#结束符
+		arr.push('#'); //#结束符
 		//console.log(arr);
 
 		for (let item of arr) {
@@ -70,7 +70,7 @@ class SufFix {
 			}
 		}
 
-		if (!can || can2 && !can) {
+		if (!can || (can2 && !can)) {
 			this.stack.push(ele);
 		}
 	}
