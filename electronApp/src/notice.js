@@ -26,10 +26,22 @@ function alertNotice(date) {
 		});
 }
 
+function getDateDetail() {
+	let date = new Date();
+	let year = date.getFullYear();
+	let month = date.getMonth() + 1;
+	let day = date.getDate();
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
+	let seconds = date.getSeconds();
+	return `${year}-${month}-${day} ${hours}-${minutes}-${seconds}`;
+}
+
 function mySchedule() {
-	schedule.scheduleJob('10 * * * * *', () => {
-		console.log(`schedule...`, new Date());
-		alertNotice(new Date().toLocaleDateString());
+	// 秒 分 时 日(1-31) 月(1-12) 周几(0-7)
+	schedule.scheduleJob('30 30 8 * * *', () => {
+		console.log(`schedule...`, getDateDetail());
+		alertNotice(getDateDetail());
 	});
 }
 
