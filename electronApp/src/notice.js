@@ -38,8 +38,11 @@ function getDateDetail() {
 }
 
 function mySchedule() {
+	let startTime = new Date(Date.now() + 10000);
+	let endTime = new Date(startTime.getTime() + 10000);
 	// 秒 分 时 日(1-31) 月(1-12) 周几(0-7)
-	schedule.scheduleJob('30 30 8 * * *', () => {
+	// '30 30 8 * * *'
+	schedule.scheduleJob({ start: startTime, end: endTime, rule: '*/3 * * * * *' }, () => {
 		console.log(`schedule...`, getDateDetail());
 		alertNotice(getDateDetail());
 	});
