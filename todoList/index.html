@@ -10,23 +10,33 @@
 			text-align: center;
 		}
 
-		ul {
-			list-style-type: none;
-			border: 1px solid #ff0011;
-			text-align: left;
-			padding: 0;
+		.headDiv {
+			background-color: #c0c0c0;
+			height: 120px;
+			width: 100%;
+			position: fixed;
+			top: 0px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#todoDiv {
+			margin-top: 150px;
 		}
 	</style>
 </head>
 
 <body>
 	<div class="root">
-		<label for="inputValue">输入：</label>
-		<input id="inputValue" type="text" />
-		<input type="button" value="添加" id="addBtn" />
-		<ul class="todoUl">
-			<li>任务列表</li>
-		</ul>
+		<div class="headDiv">
+			<label for="inputValue">输入：</label>
+			<input id="inputValue" type="text" />
+			<input type="button" value="添加" id="addBtn" />
+		</div>
+		<div id="todoDiv">
+
+		</div>
 	</div>
 </body>
 <script>
@@ -34,7 +44,7 @@
 	window.onload = function () {
 		let ele = document.createElement('script');
 		ele.async = false;
-		ele.src = './todo.js';
+		ele.src = './src/newtodo.js';
 		ele.addEventListener('load', () => {
 			ele.parentNode.removeChild(ele);
 			ele.removeEventListener('load', arguments.callee, false);

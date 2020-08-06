@@ -4,19 +4,18 @@ let win = null;
 
 function createWin() {
 	win = new BrowserWindow({
-		width: 400,
-		height: 200,
-		minWidth: 400,
-		minHeight: 200,
+		width: 800,
+		height: 650,
+		minWidth: 500,
+		minHeight: 450,
 		webPreferences: {
 			nodeIntegration: true,
 		},
+		enableRemoteModule: true,
 		// frame: false
 	});
 	win.webContents.openDevTools();
-	win.loadFile('index.html').catch((err) =>
-		console.log(`加载index.html错误`, err)
-	);
+	win.loadFile('index.html').catch((err) => console.log(`加载index.html错误`, err));
 }
 
 Menu.setApplicationMenu(null);
